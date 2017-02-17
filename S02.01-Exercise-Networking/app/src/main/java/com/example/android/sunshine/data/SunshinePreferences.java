@@ -135,4 +135,6 @@ public class SunshinePreferences {
         /** This will be implemented in a future lesson **/
         return DEFAULT_WEATHER_COORDINATES;
     }
+
+
 }

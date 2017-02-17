@@ -18,6 +18,8 @@ package com.example.android.sunshine.utilities;
 import android.content.ContentValues;
 import android.content.Context;
 
+import com.example.android.sunshine.MainActivity;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,13 +39,15 @@ public final class OpenWeatherJsonUtils {
      * getFullWeatherDataFromJson function, leveraging the data we have stored in the JSON. For
      * now, we just convert the JSON into human-readable strings.
      *
+     *
+     * @param context
      * @param forecastJsonStr JSON response from server
      *
      * @return Array of Strings describing weather data
      *
      * @throws JSONException If JSON data cannot be properly parsed
      */
-    public static String[] getSimpleWeatherStringsFromJson(Context context, String forecastJsonStr)
+    public static String[] getSimpleWeatherStringsFromJson(MainActivity context, String forecastJsonStr)
             throws JSONException {
 
         /* Weather information. Each day's forecast info is an element of the "list" array */
