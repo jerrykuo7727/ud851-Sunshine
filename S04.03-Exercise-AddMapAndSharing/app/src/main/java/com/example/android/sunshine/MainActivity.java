@@ -211,6 +211,21 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
         return true;
     }
 
+    private void openLocationInMap() {
+        String addressString = SunshinePreferences.getPreferredWeatherLocation(this);
+        Uri geoLaction = Uri.parse("geo:0,0?q=" + addressString);
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(geoLaction);
+
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Log.d(TAG, "Couldn't call " + geoLaction.toString()
+                    + ", no receiving apps installed!");
+        }
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -222,6 +237,10 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
         }
 
         // TODO (2) Launch the map when the map menu item is clicked
+        if (id == R.id.action_map) {
+            openLocationInMap();
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
