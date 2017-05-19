@@ -15,8 +15,9 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <EditTextPreference
         android:defaultValue="@string/pref_location_default"
@@ -37,5 +38,11 @@
 
     <!-- TODO (11) Add a checkbox preference for enabling and disabling notifications -->
     <!-- TODO (12) Set the default of whether or not to show preferences using bools.xml -->
+    <CheckBoxPreference
+        android:defaultValue="@bool/show_notifications_by_default"
+        android:key="@string/pref_enable_notifications_key"
+        android:summaryOff="@string/pref_enable_notifications_false"
+        android:summaryOn="@string/pref_enable_notifications_true"
+        android:title="@string/pref_enable_notifications_label" />
 
 </PreferenceScreen>

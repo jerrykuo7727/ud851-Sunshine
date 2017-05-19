@@ -155,6 +155,20 @@ public final class SunshinePreferences {
         return spContainBothLatitudeAndLongitude;
     }
 
+    public static boolean areNotificationsEnabled(Context context) {
+        String displayNotificationsKey = context.getString(R.string.pref_enable_notifications_key);
+
+        boolean shouldDisplayNotificationsByDefault = context
+                .getResources()
+                .getBoolean(R.bool.show_notifications_by_default);
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+
+        boolean shouldDisplayNotifications = sp
+                .getBoolean(displayNotificationsKey, shouldDisplayNotificationsByDefault);
+
+        return shouldDisplayNotifications;
+    }
+
     /**
      * Returns the last time that a notification was shown (in UNIX time)
      *
