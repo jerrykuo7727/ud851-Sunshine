@@ -18,5 +18,5 @@
 <!-- COMPLETED (4) Create a resources file called bools.xml within the res/values-port directory -->
 <resources>
     <!-- COMPLETED (5) Within bools.xml in the portrait specific directory, add a bool called use_today_layout and set it to false -->
-    <bool name="use_today_layout">true</bool>
+    <bool name="use_today_layout">false</bool>
 </resources>

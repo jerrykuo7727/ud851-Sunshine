@@ -44,9 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5"
-        tools:layout_editor_absoluteX="192dp"
-        tools:layout_editor_absoluteY="0dp"/>
+        app:layout_constraintGuide_percent="0.5" />
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      - Today's date                                                                              -
